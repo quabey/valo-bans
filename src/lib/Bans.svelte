@@ -40,7 +40,44 @@
   }
 
   function bo3Ban(index) {
-    // TODO: Implement bo3 ban logic
+    console.log("Bo3 ban");
+    if ($currentPickingIndex < 7) {
+      const type = determineType($currentPickingIndex);
+      $picksAndBans[$currentPickingIndex - 1] = {
+        name: $mapPool[index].name,
+        link: $mapPool[index].link,
+        team: $pickingTeam,
+        type: type,
+      };
+      $currentPickingIndex++;
+      toggleTeam();
+      console.log("Current picking index", $currentPickingIndex);
+      console.table($picksAndBans);
+    }
+
+    if ($currentPickingIndex === 7) {
+      $winningMap = $mapPool.find(
+        (map) => !$picksAndBans.find((ban) => ban.name === map.name)
+      );
+      console.log("Winning map", $winningMap);
+      $startBans = false;
+      $startWinningMap = true;
+      toggleTeam();
+      console.table($picksAndBans);
+    }
+  }
+
+  function determineType(index) {
+    // Determine whether the current action is a 'ban' or a 'pick'
+    if (index === 1 || index === 2 || index === 5 || index === 6) {
+      return "ban";
+    } else if (index === 3 || index === 4) {
+      return "pick";
+    }
+  }
+
+  function toggleTeam() {
+    $pickingTeam = $pickingTeam === $team1 ? $team2 : $team1;
   }
 </script>
 
@@ -53,8 +90,8 @@
       <div class="p-2">
         <button
           class="bg-valo p-2 rounded-2xl w-full"
-          class:opacity-40={$picksAndBans.find((ban) => ban.name === map.name)}
-          disabled={!!$picksAndBans.find((ban) => ban.name === map.name)}
+          class:opacity-40={$picksAndBans.some((ban) => ban.name === map.name)}
+          disabled={!!$picksAndBans.some((ban) => ban.name === map.name)}
           on:click={() => banMap(index)}
         >
           <span class="text-xl pb-2 font-extrabold">{map.name}</span>

@@ -8,18 +8,22 @@
       {#if ban.type === "ban"}
         <div class="bg-valo p-2 rounded-2xl w-[12rem]">
           <span class="text-sm">{ban.team} bans {ban.name}</span>
-          <img src={ban.link} alt="" class="rounded-2xl bg-[#e4eded]" />
+          <img
+            src={ban.link}
+            alt=""
+            class="rounded-2xl bg-[#e4eded] border-2 border-white"
+          />
         </div>
       {/if}
       {#if ban.type === "pick"}
-        <div class="bg-valo p-2 rounded-2xl w-[30rem]">
-          <span class="text-xl pb-2 font-extrabold"
+        <div class="bg-blue-600 p-2 rounded-2xl w-[12rem]">
+          <span class="text-sm pb-2 font-extrabold"
             >{ban.team} picks {ban.name}</span
           >
           <img
             src={ban.link}
             alt=""
-            class="rounded-2xl bg-[#e4eded] w-[30rem]"
+            class="rounded-2xl bg-[#e4eded] w-[30rem] border-2 border-white"
           />
         </div>
       {/if}

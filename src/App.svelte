@@ -57,6 +57,8 @@
     };
     $currentPickingIndex--;
     $pickingTeam = $pickingTeam === $team1 ? $team2 : $team1;
+    $startBans = true;
+    $startWinningMap = false;
   }
 </script>
 
@@ -81,7 +83,7 @@
 {#if $headsTeam}
   <Coin />
 {/if}
-<div class="absolute top-0 right-0 p-2">
+<div class="absolute flex flex-col gap-2 top-0 right-0 p-2">
   <button on:click={reset}>Reset</button>
   <button on:click={resetBans}>Restart bans</button>
   <button on:click={undo} disabled={$currentPickingIndex == 1}>Undo</button>
