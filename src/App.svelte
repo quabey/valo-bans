@@ -81,6 +81,11 @@
     <WinningMap />
     <BanList />
   {/if}
+  <div class="absolute bottom-0 left-0 z-40 p-1">
+    <span class="text-white">
+      Made with ❤️ by <a href="https://github.com/quabey"> bey </a>
+    </span>
+  </div>
 </main>
 
 <style>
