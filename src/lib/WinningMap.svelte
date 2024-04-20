@@ -10,20 +10,27 @@
   } from "./store";
 </script>
 
-<div class="bg-valo p-6 rounded-2xl">
+<div class="bg-gradient-to-br from-valo to-valo/70 p-6 rounded-2xl">
   <div class="text-3xl m-4 font-extrabold">
     {$bo3 ? "Decider" : "Winning"} Map: {$winningMap.name}
   </div>
   <div class="flex justify-center">
     {#if !$bo3}
-      <img
-        src={$winningMap.link}
-        alt=""
-        class="rounded-2xl bg-[#e4eded] h-[30rem]"
-      />
-      Team {$pickingStartTeam === $team1 ? $team2 : $team1} picks
-      <b>Attack / Defense</b>
-      on {$winningMap.name}
+      <div class="">
+        <img
+          src={$winningMap.link}
+          alt=""
+          class="rounded-2xl bg-[#e4eded] h-[30rem]"
+        />
+        <div class="pt-3">
+          <span
+            class="font-extrabold text-xl bg-white text-valo rounded-lg p-1"
+          >
+            Team {$pickingStartTeam === $team1 ? $team2 : $team1} picks
+            <b>Attack / Defense</b>
+          </span>
+        </div>
+      </div>
     {:else}
       <div class="flex flex-col">
         <div class="flex flex-col items-center p-2">

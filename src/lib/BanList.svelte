@@ -2,7 +2,7 @@
   import { picksAndBans } from "./store";
 </script>
 
-<div class="flex flex-row">
+<div class="flex flex-row items-center justify-center">
   {#each $picksAndBans as ban}
     <div class="p-2">
       {#if ban.type === "ban"}
