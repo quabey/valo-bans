@@ -60,7 +60,7 @@
   }
 </script>
 
-{#if $headsTeam || $startBans || $startWinningMap}
+{#if $headsTeam || $startBans}
   <div class="absolute top-0 left-0 flex justify-center w-screen logo-font">
     <div class="bg-valo p-2 rounded-b-2xl justify-center flex flex-col">
       <div class="text-5xl font-extrabold flex flex-row px-4 justify-center">
