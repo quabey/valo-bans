@@ -83,7 +83,14 @@
 
 <div class="">
   <div class="text-3xl m-4 font-extrabold pt-12 logo-font">
-    Picking team: {$pickingTeam}
+    {!$bo3 ||
+    $currentPickingIndex === 1 ||
+    $currentPickingIndex === 2 ||
+    $currentPickingIndex === 5 ||
+    $currentPickingIndex === 6
+      ? "Banning"
+      : "Picking"}
+    team: {$pickingTeam}
   </div>
   <div class="grid grid-cols-4 gap-3 w-full">
     {#each $mapPool as map, index}
