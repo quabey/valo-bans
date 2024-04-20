@@ -23,6 +23,10 @@
     $tailsTeam = $team1 === $headsTeam ? $team2 : $team1;
     console.table({ $team1, $team2, $headsTeam, $tailsTeam, $bo3 });
     $startModal = false;
+
+    console.log("Team 1", $team1);
+    console.log("Team 2", $team2);
+    console.log(!!$team1 && !!$team2);
   }
 </script>
 
@@ -50,6 +54,13 @@
         class="w-16 h-10 flex items-center flex-shrink-0 ml-4 p-1 bg-gray-300 rounded-full duration-300 ease-in-out peer-checked:bg-green-400 after:w-8 after:h-8 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-6 group-hover:after:translate-x-1"
       ></span>
     </label>
-    <button class="bg-white" on:click={start}> Start Match </button>
+    <button
+      class="bg-white"
+      on:click={start}
+      disabled={!(!!tempTeam1 && !!tempTeam2) ||
+        tempTeam1.value == tempTeam2.value}
+    >
+      Start Match
+    </button>
   </div>
 </div>
