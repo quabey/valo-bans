@@ -1,12 +1,12 @@
 import { writable } from "svelte/store";
 
-export const team1 = writable("Gyatt Gods");
-export const team2 = writable("OSHS");
+export const team1 = writable("");
+export const team2 = writable("");
 
 export const headsTeam = writable("");
 export const tailsTeam = writable("");
 
-export const pickingTeam = writable("OSHS");
+export const pickingTeam = writable("");
 
 export const teamList = writable([
   "Gyatt Gods",
@@ -19,9 +19,9 @@ export const teamList = writable([
 
 export const bo3 = writable(false);
 
-export const startModal = writable(false);
+export const startModal = writable(true);
 
-export const startBans = writable(true);
+export const startBans = writable(false);
 
 export const winningMap = writable({ link: "", name: "" });
 
@@ -31,7 +31,7 @@ export const currentMapPool = writable([]);
 
 export const currentPickingIndex = writable(1);
 
-export const pickingStartTeam = writable("OSHS");
+export const pickingStartTeam = writable("");
 
 export const picksAndBans = writable([
   { link: "", name: "", team: "", type: "" },
