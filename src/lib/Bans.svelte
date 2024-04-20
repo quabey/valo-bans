@@ -45,7 +45,9 @@
 </script>
 
 <div class="">
-  <div class="text-2xl m-4 font-extrabold">Picking team: {$pickingTeam}</div>
+  <div class="text-3xl m-4 font-extrabold pt-12 logo-font">
+    Picking team: {$pickingTeam}
+  </div>
   <div class="grid grid-cols-4 gap-3 w-full">
     {#each $mapPool as map, index}
       <div class="p-2">

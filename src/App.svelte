@@ -60,33 +60,48 @@
   }
 </script>
 
-<main>
-  <div class="">Header</div>
-  {#if $headsTeam}
-    <Coin />
-  {/if}
-  <div class="absolute top-0 right-0 p-2">
-    <button on:click={reset}>Reset</button>
-    <button on:click={resetBans}>Restart bans</button>
-    <button on:click={undo} disabled={$currentPickingIndex == 1}>Undo</button>
+{#if $headsTeam || $startBans || $startWinningMap}
+  <div class="absolute top-0 left-0 flex justify-center w-screen logo-font">
+    <div class="bg-valo p-2 rounded-b-2xl justify-center flex flex-col">
+      <div class="text-5xl font-extrabold flex flex-row px-4 justify-center">
+        <img
+          src="/images/banner.png"
+          alt=""
+          class="bg-[#242424] rounded-lg p-1 h-24 pb-2"
+        />
+      </div>
+      <div class="text-lg">
+        <span class="text-2xl">{$team1}</span> vs
+        <span class="text-2xl">{$team2}</span>
+      </div>
+    </div>
   </div>
-  {#if $startModal}
-    <Setup />
-  {/if}
-  {#if $startBans}
-    <Bans />
-    <BanList />
-  {/if}
-  {#if $startWinningMap}
-    <WinningMap />
-    <BanList />
-  {/if}
-  <div class="absolute bottom-0 left-0 z-40 p-1">
-    <span class="text-white">
-      Made with ❤️ by <a href="https://github.com/quabey"> bey </a>
-    </span>
-  </div>
-</main>
+{/if}
+
+{#if $headsTeam}
+  <Coin />
+{/if}
+<div class="absolute top-0 right-0 p-2">
+  <button on:click={reset}>Reset</button>
+  <button on:click={resetBans}>Restart bans</button>
+  <button on:click={undo} disabled={$currentPickingIndex == 1}>Undo</button>
+</div>
+{#if $startModal}
+  <Setup />
+{/if}
+{#if $startBans}
+  <Bans />
+  <BanList />
+{/if}
+{#if $startWinningMap}
+  <WinningMap />
+  <BanList />
+{/if}
+<div class="absolute bottom-0 left-0 z-40 p-1">
+  <span class="text-white">
+    Made with ❤️ by <a href="https://github.com/quabey"> bey </a>
+  </span>
+</div>
 
 <style>
 </style>
