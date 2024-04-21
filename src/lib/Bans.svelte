@@ -18,13 +18,13 @@
       return;
     }
     if ($picksAndBans.length < 7) {
-      $pickingTeam = $pickingTeam === $team1 ? $team2 : $team1;
       $picksAndBans[$currentPickingIndex - 1] = {
         name: $mapPool[index].name,
         link: $mapPool[index].link,
         team: $pickingTeam,
         type: "ban",
       };
+      $pickingTeam = $pickingTeam === $team1 ? $team2 : $team1;
       $currentPickingIndex++;
     }
 
