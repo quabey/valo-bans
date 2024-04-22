@@ -49,33 +49,33 @@
         </div>
         <div class="flex flex-row justify-center gap-4">
           <div class="flex flex-col gap-1 items-center">
-            <span>{$picksAndBans[3].team}</span>
+            <span>{$picksAndBans[3 - 1].team}</span>
             <div class="">
               <img
-                src={$picksAndBans[3].link}
+                src={$picksAndBans[3 - 1].link}
                 alt=""
                 class="rounded-2xl bg-[#e4eded] h-[8rem] border-4 border-white"
               />
             </div>
             <span class="bg-white text-valo rounded-lg font-bold p-1">
-              {$picksAndBans[3].team == $team1 ? $team2 : $team1} picks
+              {$picksAndBans[3 - 1].team == $team1 ? $team2 : $team1} picks
               <b>Attack / Defense</b>
-              {$picksAndBans[3].name}
+              {$picksAndBans[3 - 1].name}
             </span>
           </div>
           <div class="flex flex-col gap-1 items-center">
-            <span>{$picksAndBans[4].team}</span>
+            <span>{$picksAndBans[4 - 1].team}</span>
             <div class="">
               <img
-                src={$picksAndBans[4].link}
+                src={$picksAndBans[4 - 1].link}
                 alt=""
                 class="rounded-2xl bg-[#e4eded] h-[8rem] border-4 border-white"
               />
             </div>
             <span class="bg-white text-valo rounded-lg font-bold p-1">
-              {$picksAndBans[4].team == $team1 ? $team2 : $team1} picks
+              {$picksAndBans[4 - 1].team == $team1 ? $team2 : $team1} picks
               <b>Attack / Defense</b>
-              {$picksAndBans[4].name}
+              {$picksAndBans[4 - 1].name}
             </span>
           </div>
         </div>
