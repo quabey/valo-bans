@@ -11,10 +11,10 @@ export const pickingTeam = writable("");
 export const teamList = writable([
   "Gyatt Gods",
   "OSHS",
-  "6IQ",
   "Solo Queue",
-  "Sun Smashers",
-  "The Best Team",
+  "maddox kitten",
+  "Eclipse",
+  "sic",
 ]);
 
 export const bo3 = writable(false);
