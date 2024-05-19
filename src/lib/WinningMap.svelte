@@ -26,7 +26,7 @@
           <span
             class="font-extrabold text-xl bg-white text-valo rounded-lg p-1"
           >
-            Team {$pickingStartTeam === $team1 ? $team2 : $team1} picks
+            Team {$pickingStartTeam === $team1 ? $team1 : $team2} picks
             <b>Attack / Defense</b>
           </span>
         </div>
